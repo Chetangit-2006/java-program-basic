@@ -41,7 +41,7 @@ public static void main main(String args[]){
 
 
 //Day 2
- // This program declares two Box objects.
+# This program declares two Box objects.
 class Box {
     double width;
     double height;
