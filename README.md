@@ -1,4 +1,4 @@
-# java-program-basic Day1
+# java-program-basic //Day1
 # Writing a program using class person to display name age
 class Person
 {
