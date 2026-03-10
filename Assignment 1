@@ -170,7 +170,7 @@ class Resort {
     float Charges;
     int Days;
     float Amount;
-    // Function to calculate amount
+     // Function to calculate amount
     float Compute() {
         Amount = Days * Charges;
         if (Amount > 11000) {
@@ -178,7 +178,7 @@ class Resort {
         }
         return Amount;
     }
-    // Function to get input
+     // Function to get input
     void Getinfo() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter Room Number: ");
@@ -191,7 +191,7 @@ class Resort {
         System.out.print("Enter Number of Days: ");
         Days = sc.nextInt();
     }
-    // Function to display information
+     // Function to display information
     void DispInfo() {
         Compute();
         System.out.println("\nRoom Number: " + RNo);
@@ -200,14 +200,14 @@ class Resort {
         System.out.println("Days of Stay: " + Days);
         System.out.println("Total Amount: " + Amount);
     }
-    // Main Method
+     // Main Method
     public static void main(String[] args) {
         Resort r = new Resort();
         r.Getinfo();
         r.DispInfo();
     }
 }
-//output:
+ //output:
 Enter Room Number: 101
 Enter Customer Name: Aryan
 Enter Charges per Day: 2000
