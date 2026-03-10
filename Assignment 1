@@ -110,7 +110,7 @@ ISBN: 222
 -------------------
 
 
-#Code3:CARRENTAL Class
+#Code3:CARRENTAL_Class
 import java.util.Scanner;
 class CARRENTAL {
     int CarId;
@@ -147,7 +147,7 @@ class CARRENTAL {
         System.out.print("Enter Car ID: ");
         int id = sc.nextInt();
         sc.nextLine();
-        System.out.print("Enter Car Type (Small Car / Van / SUV): ");
+        System.out.print("Enter Car Type (Small Car  / Van  /  SUV): ");
         String type = sc.nextLine();
         c.GetCar(id, type);
         c.GetRent();
