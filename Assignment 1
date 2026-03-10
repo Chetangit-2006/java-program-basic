@@ -26,7 +26,7 @@ Name: Rahul
 Age: 22
 
 
-#Code2:.Design a Book class
+#Code2:Design a Book class
 import java.util.ArrayList;
 // Book class
 class Book {
@@ -181,14 +181,14 @@ class Resort {
      // Function to get input
     void Getinfo() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter Room Number: ");
+        System.out.print("Enter Room Number : ");
         RNo = sc.nextInt();
         sc.nextLine();
-        System.out.print("Enter Customer Name: ");
+        System.out.print("Enter Customer Name : ");
         Name = sc.nextLine();
-        System.out.print("Enter Charges per Day: ");
+        System.out.print("Enter Charges per Day : ");
         Charges = sc.nextFloat();
-        System.out.print("Enter Number of Days: ");
+        System.out.print("Enter Number of Days : ");
         Days = sc.nextInt();
     }
      // Function to display information
@@ -208,10 +208,10 @@ class Resort {
     }
 }
  //output:
-Enter Room Number: 101
-Enter Customer Name: Aryan
-Enter Charges per Day: 2000
-Enter Number of Days: 6
+Enter Room Number : 101
+Enter Customer Name : Aryan
+Enter Charges per Day : 2000
+Enter Number of Days : 6
 Room Number: 101
 Customer Name: Aryan
 Charges per Day: 2000.0
