@@ -1,4 +1,4 @@
-# Create a class Person
+#Code1:Create a class Person
 class Person:
     # Constructor
     def __init__(self, name, age):
@@ -26,3 +26,194 @@ Name: Rahul
 Age: 22
 
 
+#Code2:.Design a Book class
+import java.util.ArrayList;
+// Book class
+class Book {
+    String title;
+    String author;
+    String ISBN;
+    // Constructor
+    Book(String title, String author, String ISBN) {
+        this.title = title;
+        this.author = author;
+        this.ISBN = ISBN;
+    }
+    // Method to display book details
+    void displayBook() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("ISBN: " + ISBN);
+        System.out.println("-------------------");
+    }
+}
+// Library class
+class Library {
+    ArrayList<Book> books = new ArrayList<>();
+    // Add book
+    void addBook(Book book) {
+        books.add(book);
+        System.out.println("Book added successfully.");
+    }
+    // Remove book by ISBN
+    void removeBook(String isbn) {
+        for (Book b : books) {
+            if (b.ISBN.equals(isbn)) {
+                books.remove(b);
+                System.out.println("Book removed successfully.");
+                return;
+            }
+        }
+        System.out.println("Book not found.");
+    }
+    // Display all books
+    void displayBooks() {
+        for (Book b : books) {
+            b.displayBook();
+        }
+    }
+}
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Library lib = new Library();
+        Book b1 = new Book("Java Programming", "James Gosling", "111");
+        Book b2 = new Book("Python Basics", "Guido van Rossum", "222");
+        lib.addBook(b1);
+        lib.addBook(b2);
+        System.out.println("\nAll Books:");
+        lib.displayBooks();
+        System.out.println("\nRemoving Book with ISBN 111");
+        lib.removeBook("111");
+        System.out.println("\nAvailable Books:");
+        lib.displayBooks();
+    }
+}
+//output:
+Book added successfully.
+Book added successfully.
+All Books:
+Title: Java Programming
+Author: James Gosling
+ISBN: 111
+-------------------
+Title: Python Basics
+Author: Guido van Rossum
+ISBN: 222
+-------------------
+Removing Book with ISBN 111
+Book removed successfully.
+Available Books:
+Title: Python Basics
+Author: Guido van Rossum
+ISBN: 222
+-------------------
+
+
+#Code3:CARRENTAL Class
+import java.util.Scanner;
+class CARRENTAL {
+    int CarId;
+    String CarType;
+    float Rent;
+    // Method to accept CarId and CarType
+    void GetCar(int id, String type) {
+        CarId = id;
+        CarType = type;
+    }
+    // Method to calculate rent based on CarType
+    float GetRent() {
+        if (CarType.equalsIgnoreCase("Small Car")) {
+            Rent = 1000;
+        }
+        else if (CarType.equalsIgnoreCase("Van")) {
+            Rent = 800;
+        }
+        else if (CarType.equalsIgnoreCase("SUV")) {
+            Rent = 2500;
+        }
+        return Rent;
+    }
+    // Method to display car details
+    void ShowCar() {
+        System.out.println("Car ID: " + CarId);
+        System.out.println("Car Type: " + CarType);
+        System.out.println("Rent: " + Rent);
+    }
+    // Main method
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        CARRENTAL c = new CARRENTAL();
+        System.out.print("Enter Car ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Car Type (Small Car / Van / SUV): ");
+        String type = sc.nextLine();
+        c.GetCar(id, type);
+        c.GetRent();
+        c.ShowCar();
+    }
+}
+//output:
+Enter Car ID: 101
+Enter Car Type (Small Car / Van / SUV): SUV
+Car ID: 101
+Car Type: SUV
+Rent: 2500.0
+
+
+#Code4:Resort Class
+import java.util.Scanner;
+class Resort {
+    int RNo;
+    String Name;
+    float Charges;
+    int Days;
+    float Amount;
+    // Function to calculate amount
+    float Compute() {
+        Amount = Days * Charges;
+        if (Amount > 11000) {
+            Amount = 1.02f * Amount;
+        }
+        return Amount;
+    }
+    // Function to get input
+    void Getinfo() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Room Number: ");
+        RNo = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Customer Name: ");
+        Name = sc.nextLine();
+        System.out.print("Enter Charges per Day: ");
+        Charges = sc.nextFloat();
+        System.out.print("Enter Number of Days: ");
+        Days = sc.nextInt();
+    }
+    // Function to display information
+    void DispInfo() {
+        Compute();
+        System.out.println("\nRoom Number: " + RNo);
+        System.out.println("Customer Name: " + Name);
+        System.out.println("Charges per Day: " + Charges);
+        System.out.println("Days of Stay: " + Days);
+        System.out.println("Total Amount: " + Amount);
+    }
+    // Main Method
+    public static void main(String[] args) {
+        Resort r = new Resort();
+        r.Getinfo();
+        r.DispInfo();
+    }
+}
+//output:
+Enter Room Number: 101
+Enter Customer Name: Aryan
+Enter Charges per Day: 2000
+Enter Number of Days: 6
+Room Number: 101
+Customer Name: Aryan
+Charges per Day: 2000.0
+Days of Stay: 6
+Total Amount: 12240.0
