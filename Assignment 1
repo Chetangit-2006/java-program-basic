@@ -170,50 +170,47 @@ class Resort {
     float Charges;
     int Days;
     float Amount;
-     // Function to calculate amount
+    // Calculate amount
     float Compute() {
         Amount = Days * Charges;
-        if (Amount > 11000) {
-            Amount = 1.02f * Amount;
-        }
+        if (Amount > 11000)
+            Amount = Amount * 1.02f;
         return Amount;
     }
-     // Function to get input
+    // Input details
     void Getinfo() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter Room Number : ");
+        System.out.print("Enter Room No: ");
         RNo = sc.nextInt();
-        sc.nextLine();
-        System.out.print("Enter Customer Name : ");
-        Name = sc.nextLine();
-        System.out.print("Enter Charges per Day : ");
+        System.out.print("Enter Name: ");
+        Name = sc.next();
+        System.out.print("Enter Charges per Day: ");
         Charges = sc.nextFloat();
-        System.out.print("Enter Number of Days : ");
+        System.out.print("Enter Days: ");
         Days = sc.nextInt();
     }
-     // Function to display information
+    // Display details
     void DispInfo() {
         Compute();
-        System.out.println("\nRoom Number: " + RNo);
-        System.out.println("Customer Name: " + Name);
-        System.out.println("Charges per Day: " + Charges);
-        System.out.println("Days of Stay: " + Days);
-        System.out.println("Total Amount: " + Amount);
+        System.out.println("Room No: " + RNo);
+        System.out.println("Name: " + Name);
+        System.out.println("Charges: " + Charges);
+        System.out.println("Days: " + Days);
+        System.out.println("Amount: " + Amount);
     }
-     // Main Method
     public static void main(String[] args) {
         Resort r = new Resort();
         r.Getinfo();
         r.DispInfo();
     }
 }
- //output:
-Enter Room Number : 101
-Enter Customer Name : Aryan
-Enter Charges per Day : 2000
-Enter Number of Days : 6
-Room Number: 101
-Customer Name: Aryan
-Charges per Day: 2000.0
-Days of Stay: 6
-Total Amount: 12240.0
+//output:
+Enter Room No: 101
+Enter Name: Aryan
+Enter Charges per Day: 2000
+Enter Days: 6
+Room No: 101
+Name: Aryan
+Charges: 2000.0
+Days: 6
+Amount: 12240.0
