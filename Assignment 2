@@ -45,3 +45,17 @@ class Employee
         e.dispdata();
     }
 }
+//output:
+Enter Employee Number: 101
+Enter Employee Name: Aryan
+Enter Basic Salary: 20000
+Enter HRA: 5000
+Enter DA: 3000
+
+Employee Details
+Employee Number: 101
+Employee Name: Aryan
+Basic Salary: 20000.0
+HRA: 5000.0
+DA: 3000.0
+Net Pay: 28000.0
