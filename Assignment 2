@@ -60,3 +60,17 @@ Basic Salary: 20000.0
 HRA: 5000.0
 DA: 3000.0
 Net Pay: 28000.0
+
+#code2:
+class Rectangle:
+    def __init__(self, length, breadth):
+        self.length = length
+        self.breadth = breadth
+    def Area(self):
+        return self.length * self.breadth
+# Rectangle 1
+r1 = Rectangle(4, 5)
+print("Area of Rectangle 1:", r1.Area())
+# Rectangle 2
+r2 = Rectangle(5, 8)
+print("Area of Rectangle 2:", r2.Area())
