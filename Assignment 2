@@ -61,6 +61,7 @@ HRA: 5000.0
 DA: 3000.0
 Net Pay: 28000.0
 
+
 #code2:
 class Rectangle:
     def __init__(self, length, breadth):
@@ -74,7 +75,65 @@ print("Area of Rectangle 1:", r1.Area())
 # Rectangle 2
 r2 = Rectangle(5, 8)
 print("Area of Rectangle 2:", r2.Area())
-
 //output:
 Area of Rectangle 1: 20
 Area of Rectangle 2: 40
+
+
+#code3:
+// Abstract class
+abstract class Shape
+{
+    // Abstract method
+    abstract double calculate_area();
+    // Concrete method
+    void display_info()
+    {
+        System.out.println("This is a Shape");
+    }
+}
+// Circle class
+class Circle extends Shape
+{
+    double radius;
+    Circle(double r)
+    {
+        radius = r;
+    }
+    double calculate_area()
+    {
+        return 3.14 * radius * radius;
+    }
+}
+// Rectangle class
+class Rectangle extends Shape
+{
+    double length, breadth;
+    Rectangle(double l, double b)
+    {
+        length = l;
+        breadth = b;
+    }
+    double calculate_area()
+    {
+        return length * breadth;
+    }
+}
+// Main class
+public class Main
+{
+    public static void main(String args[])
+    {
+        Circle c = new Circle(5);
+        c.display_info();
+        System.out.println("Area of Circle = " + c.calculate_area());
+        Rectangle r = new Rectangle(4,6);
+        r.display_info();
+        System.out.println("Area of Rectangle = " + r.calculate_area());
+    }
+}
+//output:
+This is a Shape
+Area of Circle = 78.5
+This is a Shape
+Area of Rectangle = 24.0
