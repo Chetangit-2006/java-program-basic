@@ -137,3 +137,47 @@ This is a Shape
 Area of Circle = 78.5
 This is a Shape
 Area of Rectangle = 24.0
+
+
+#code4:
+// Interface
+interface Filterable {
+    void apply_filter(String filter_type);
+    void reset_filter();
+}
+// ImageProcessor class
+class ImageProcessor implements Filterable {
+    public void apply_filter(String filter_type) {
+        System.out.println("Applying " + filter_type + " filter to the image.");
+    }
+    public void reset_filter() {
+        System.out.println("Resetting image filters to default.");
+    }
+}
+// DataAnalyzer class
+class DataAnalyzer implements Filterable {
+    public void apply_filter(String filter_type) {
+        System.out.println("Applying " + filter_type + " filter to the dataset.");
+    }
+    public void reset_filter() {
+        System.out.println("Resetting data filters to default.");
+    }
+}
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        ImageProcessor img = new ImageProcessor();
+        DataAnalyzer data = new DataAnalyzer();
+        // Image processing actions
+        img.apply_filter("Blur");
+        img.reset_filter();
+        // Data analysis actions
+        data.apply_filter("Noise Reduction");
+        data.reset_filter();
+    }
+}
+//output:
+Applying Blur filter to the image.
+Resetting image filters to default.
+Applying Noise Reduction filter to the dataset.
+Resetting data filters to default.
