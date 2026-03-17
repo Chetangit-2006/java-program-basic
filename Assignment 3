@@ -22,3 +22,7 @@ public class Main {
         System.out.println("Sum of 2 doubles: " + calc.add(10.5, 20.5));
     }
 }
+//output:
+Sum of 2 integers: 30
+Sum of 3 integers: 60
+Sum of 2 doubles: 31.0
