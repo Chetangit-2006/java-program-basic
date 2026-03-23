@@ -122,3 +122,58 @@ This is a shape
 Enter length: 4
 Enter breadth: 3
 Area of Rectangle: 12
+
+
+
+#code12:
+import java.util.Scanner;
+// Abstract class
+abstract class Payment {
+    abstract void pay(double amount);
+}
+// Subclass 1
+class CreditCardPayment extends Payment {
+    void pay(double amount) {
+        System.out.println("Paid " + amount + " using Credit Card");
+    }
+}
+// Subclass 2
+class UPIPayment extends Payment {
+    void pay(double amount) {
+        System.out.println("Paid " + amount + " using UPI");
+    }
+}
+// Subclass 3
+class NetBankingPayment extends Payment {
+    void pay(double amount) {
+        System.out.println("Paid " + amount + " using Net Banking");
+    }
+}
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter amount: ");
+        double amount = sc.nextDouble();
+        System.out.println("\nChoose Payment Method:");
+        System.out.println("1. Credit Card");
+        System.out.println("2. UPI");
+        System.out.println("3. Net Banking");
+        System.out.print("Enter choice: ");
+        int choice = sc.nextInt();
+        Payment p;
+        if (choice == 1) {
+            p = new CreditCardPayment();
+        } else if (choice == 2) {
+            p = new UPIPayment();
+        } else if (choice == 3) {
+            p = new NetBankingPayment();
+        } else {
+            System.out.println("Invalid choice");
+            return;
+        }
+        p.pay(amount);
+    }
+}
+
+//output:
