@@ -69,33 +69,48 @@ ICICI Interest Rate: 6.8%
 
 
 #code11:
-//Base class
-class Shape:
-    def display(self):
-        print("This is a shape")
-//Derived class 1
-class Circle(Shape):
-    def area(self):
-        r = float(input("Enter radius of circle: "))
-        area = 3.14 * r * r
-        print("Area of Circle:", area)
-//Derived class 2
-class Rectangle(Shape):
-    def area(self):
-        l = float(input("Enter length: "))
-        b = float(input("Enter breadth: "))
-        area = l * b
-        print("Area of Rectangle:", area)
-//Create objects
-c = Circle()
-r = Rectangle()
-//Call methods
-print("\nCircle:")
-c.display()
-c.area()
-print("\nRectangle:")
-r.display()
-r.area()
+import java.util.Scanner;
+// Base class
+class Shape {
+    void display() {
+        System.out.println("This is a shape");
+    }
+}
+// Derived class 1
+class Circle extends Shape {
+    void area() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter radius of circle: ");
+        double r = sc.nextDouble();
+        double area = 3.14 * r * r;
+        System.out.println("Area of Circle: " + area);
+    }
+}
+// Derived class 2
+class Rectangle extends Shape {
+    void area() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter length: ");
+        double l = sc.nextDouble();
+        System.out.print("Enter breadth: ");
+        double b = sc.nextDouble();
+        double area = l * b;
+        System.out.println("Area of Rectangle: " + area);
+    }
+}
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Circle c = new Circle();
+        Rectangle r = new Rectangle();
+        System.out.println("\nCircle:");
+        c.display();
+        c.area();
+        System.out.println("\nRectangle:");
+        r.display();
+        r.area();
+    }
+}
 
 //output:
 Circle:
@@ -107,4 +122,3 @@ This is a shape
 Enter length: 4
 Enter breadth: 3
 Area of Rectangle: 12
-
