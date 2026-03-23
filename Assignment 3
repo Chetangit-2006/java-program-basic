@@ -177,3 +177,10 @@ public class Main {
 }
 
 //output:
+Enter amount: 1000
+Choose Payment Method:
+1. Credit Card
+2. UPI
+3. Net Banking
+Enter choice: 2
+Paid 1000.0 using UPI
