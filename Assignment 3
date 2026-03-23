@@ -33,36 +33,30 @@ Sum of 2 doubles: 31.0
 interface Bank {
     double getInterestRate();
 }
-
 // SBI Class
 class SBI implements Bank {
     public double getInterestRate() {
         return 6.5;
     }
 }
-
 // HDFC Class
 class HDFC implements Bank {
     public double getInterestRate() {
         return 7.0;
     }
 }
-
 // ICICI Class
 class ICICI implements Bank {
     public double getInterestRate() {
         return 6.8;
     }
 }
-
 // Main Class
 public class Main {
     public static void main(String[] args) {
-
         Bank b1 = new SBI();
         Bank b2 = new HDFC();
         Bank b3 = new ICICI();
-
         System.out.println("SBI Interest Rate: " + b1.getInterestRate() + "%");
         System.out.println("HDFC Interest Rate: " + b2.getInterestRate() + "%");
         System.out.println("ICICI Interest Rate: " + b3.getInterestRate() + "%");
@@ -72,3 +66,45 @@ public class Main {
 SBI Interest Rate: 6.5%
 HDFC Interest Rate: 7.0%
 ICICI Interest Rate: 6.8%
+
+
+#code11:
+//Base class
+class Shape:
+    def display(self):
+        print("This is a shape")
+//Derived class 1
+class Circle(Shape):
+    def area(self):
+        r = float(input("Enter radius of circle: "))
+        area = 3.14 * r * r
+        print("Area of Circle:", area)
+//Derived class 2
+class Rectangle(Shape):
+    def area(self):
+        l = float(input("Enter length: "))
+        b = float(input("Enter breadth: "))
+        area = l * b
+        print("Area of Rectangle:", area)
+//Create objects
+c = Circle()
+r = Rectangle()
+//Call methods
+print("\nCircle:")
+c.display()
+c.area()
+print("\nRectangle:")
+r.display()
+r.area()
+
+//output:
+Circle:
+This is a shape
+Enter radius of circle: 5
+Area of Circle: 78.5
+Rectangle:
+This is a shape
+Enter length: 4
+Enter breadth: 3
+Area of Rectangle: 12
+
