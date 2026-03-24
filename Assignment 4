@@ -45,3 +45,6 @@ public class Main {
         System.out.println("Developer Bonus: " + e.calculateBonus());
     }
 }
+//output:
+Manager Bonus: 10000.0
+Developer Bonus: 9000.0
