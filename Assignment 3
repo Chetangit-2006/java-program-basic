@@ -1,4 +1,4 @@
-#code5:
+#code9:
 class Calculator {
     // Method with 2 integers
     int add(int a, int b) {
@@ -28,7 +28,7 @@ Sum of 3 integers: 60
 Sum of 2 doubles: 31.0
 
 
-#code6:
+#code10:
 // Interface
 interface Bank {
     double getInterestRate();
