@@ -48,3 +48,40 @@ public class Main {
 //output:
 Manager Bonus: 10000.0
 Developer Bonus: 9000.0
+
+#code14:
+class Person {
+    void role() {
+        System.out.println("I am a Person");
+    }
+}
+// Level 1 Inheritance
+class Employee extends Person {
+    @Override
+    void role() {
+        System.out.println("I am an Employee");
+    }
+}
+// Level 2 Inheritance (Multilevel)
+class Manager extends Employee {
+    @Override
+    void role() {
+        System.out.println("I am a Manager");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        // Runtime Polymorphism
+        Person p;
+        p = new Person();
+        p.role();
+        p = new Employee();
+        p.role();
+        p = new Manager();
+        p.role();
+    }
+}
+
+//output:I am a Person
+I am an Employee
+I am a Manager
