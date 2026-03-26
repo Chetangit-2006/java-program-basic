@@ -82,6 +82,62 @@ public class Main {
     }
 }
 
-//output:I am a Person
-I am an Employee
-I am a Manager
+#code15:
+// Abstract class
+abstract class Ride {
+    double distance;
+    // Constructor
+    Ride(double distance) {
+        this.distance = distance;
+    }
+    // Abstract method
+    abstract double calculateFare();
+}
+// BikeRide class
+class BikeRide extends Ride {
+    BikeRide(double distance) {
+        super(distance);
+    }
+    @Override
+    double calculateFare() {
+        return distance * 5;
+    }
+}
+// AutoRide class
+class AutoRide extends Ride {
+    AutoRide(double distance) {
+        super(distance);
+    }
+    @Override
+    double calculateFare() {
+        return distance * 8;
+    }
+}
+// CarRide class
+class CarRide extends Ride {
+    CarRide(double distance) {
+        super(distance);
+    }
+    @Override
+    double calculateFare() {
+        return distance * 12;
+    }
+}
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Creating Ride array (Runtime Polymorphism)
+        Ride[] rides = new Ride[3];
+        rides[0] = new BikeRide(10);  // 10 km
+        rides[1] = new AutoRide(10);  // 10 km
+        rides[2] = new CarRide(10);   // 10 km
+        // Calculating fares
+        for (Ride r : rides) {
+            System.out.println("Fare: ₹" + r.calculateFare());
+        }
+    }
+}
+//output:
+Fare: ₹50.0
+Fare: ₹80.0
+Fare: ₹120.0
