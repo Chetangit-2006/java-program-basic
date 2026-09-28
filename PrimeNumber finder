@@ -1,19 +1,29 @@
 import java.util.Scanner;
 
 public class PrimeNumber {
+
     public static void main(String[] args) {
 
+        // Create Scanner object to take input from the user
         Scanner sc = new Scanner(System.in);
 
+        // Ask the user to enter a number
         System.out.print("Enter a number: ");
         int n = sc.nextInt();
 
+        // Assume the number is prime initially
         boolean isPrime = true;
 
+        // Numbers less than or equal to 1 are not prime
         if (n <= 1) {
             isPrime = false;
-        } else {
+        } 
+        else {
+
+            // Check divisibility from 2 up to the square root of n
             for (int i = 2; i <= Math.sqrt(n); i++) {
+
+                // If n is completely divisible by i, it is not prime
                 if (n % i == 0) {
                     isPrime = false;
                     break;
@@ -21,12 +31,15 @@ public class PrimeNumber {
             }
         }
 
+        // Display the result
         if (isPrime) {
             System.out.println(n + " is a Prime Number.");
-        } else {
+        } 
+        else {
             System.out.println(n + " is not a Prime Number.");
         }
 
+        // Close the Scanner
         sc.close();
     }
 }
