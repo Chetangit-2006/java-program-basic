@@ -43,3 +43,15 @@ public class PrimeNumber {
         sc.close();
     }
 }
+
+
+
+Enter a number: 7
+7 is a Prime Number.
+
+Enter a number: 10
+10 is not a Prime Number.
+
+
+Enter a number: 1
+1 is not a Prime Number.
