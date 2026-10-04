@@ -91,3 +91,16 @@ public class EmployeeManagement {
         }
     }
 }
+
+
+
+//sample output:
+EMPLOYEE DETAILS
+----------------
+101 | Chetan | Salary: 60000.0 | Bonus: 12000.0
+Tax: 6000.0
+
+102 | Rahul | Salary: 90000.0 | Bonus: 27000.0
+Tax: 13500.0
+
+Data saved successfully!
