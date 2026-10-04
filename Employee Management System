@@ -1,4 +1,149 @@
+import java.io.*;
+import java.util.*;
 
+// Abstract class representing a common Employee
+abstract class Employee {
+
+    int id;
+    String name;
+    double salary;
+
+    // Constructor to initialize employee details
+    Employee(int id, String name, double salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    // Abstract method - implemented by child classes
+    abstract double calculateBonus();
+
+    // Display employee information
+    void display() {
+        System.out.println(
+            id + " | " + name +
+            " | Salary: " + salary +
+            " | Bonus: " + calculateBonus()
+        );
+    }
+}
+
+// Interface for calculating employee tax
+interface Taxable {
+
+    double calculateTax();
+}
+
+// Developer class inherits Employee and implements Taxable
+class Developer extends Employee implements Taxable {
+
+    // Constructor
+    Developer(int id, String name, double salary) {
+        super(id, name, salary);
+    }
+
+    // Calculate 20% bonus for developer
+    @Override
+    double calculateBonus() {
+        return salary * 0.20;
+    }
+
+    // Calculate 10% tax
+    @Override
+    public double calculateTax() {
+        return salary * 0.10;
+    }
+}
+
+// Manager class inherits Employee and implements Taxable
+class Manager extends Employee implements Taxable {
+
+    // Constructor
+    Manager(int id, String name, double salary) {
+        super(id, name, salary);
+    }
+
+    // Calculate 30% bonus for manager
+    @Override
+    double calculateBonus() {
+        return salary * 0.30;
+    }
+
+    // Calculate 15% tax
+    @Override
+    public double calculateTax() {
+        return salary * 0.15;
+    }
+}
+
+// Main class
+public class EmployeeManagement {
+
+    public static void main(String[] args) {
+
+        // Create ArrayList to store employees
+        ArrayList<Employee> employees = new ArrayList<>();
+
+        // Add Developer object
+        employees.add(
+            new Developer(101, "Chetan", 60000)
+        );
+
+        // Add Manager object
+        employees.add(
+            new Manager(102, "Rahul", 90000)
+        );
+
+        // Display heading
+        System.out.println("EMPLOYEE DETAILS");
+        System.out.println("----------------");
+
+        // Loop through all employees
+        for (Employee e : employees) {
+
+            // Display employee information
+            e.display();
+
+            // Convert Employee reference to Taxable
+            Taxable t = (Taxable) e;
+
+            // Display tax
+            System.out.println("Tax: " + t.calculateTax());
+
+            System.out.println();
+        }
+
+        // File Handling
+        try {
+
+            // Create a file named employees.txt
+            FileWriter file = new FileWriter("employees.txt");
+
+            // Write employee data into the file
+            for (Employee e : employees) {
+
+                file.write(
+                    e.id + " " +
+                    e.name + " " +
+                    e.salary + "\n"
+                );
+            }
+
+            // Close the file
+            file.close();
+
+            System.out.println("Data saved successfully!");
+
+        }
+        catch (IOException e) {
+
+            // Handle file-related errors
+            System.out.println(
+                "File Error: " + e.getMessage()
+            );
+        }
+    }
+}
 
 
 
