@@ -118,3 +118,22 @@ public class BankManagement {
         account.showBalance();
     }
 }
+
+
+
+/sample output:
+Chetan wants to withdraw ₹6000.0
+Chetan is processing...
+Chetan successfully withdrew ₹6000.0
+Remaining Balance: ₹4000.0
+
+Rahul wants to withdraw ₹5000.0
+Rahul: Insufficient balance!
+
+Aman wants to withdraw ₹2000.0
+Aman is processing...
+Aman successfully withdrew ₹2000.0
+Remaining Balance: ₹2000.0
+
+========== RESULT ==========
+Final Balance: ₹2000.0
