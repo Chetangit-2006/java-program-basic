@@ -1,1 +1,104 @@
 
+import java.util.*;
+
+// Interface for issuing library items
+interface Issuable {
+    void issueItem();
+    void returnItem();
+}
+
+// Abstract base class for library items
+abstract class LibraryItem {
+    protected int id;
+    protected String title;
+    protected boolean issued;
+
+    // Constructor
+    LibraryItem(int id, String title) {
+        this.id = id;
+        this.title = title;
+        this.issued = false;
+    }
+
+    // Abstract method
+    abstract void displayDetails();
+}
+
+// Book class inherits LibraryItem and implements Issuable
+class Book extends LibraryItem implements Issuable {
+    private String author;
+
+    // Constructor
+    Book(int id, String title, String author) {
+        super(id, title);
+        this.author = author;
+    }
+
+    // Display book details
+    @Override
+    void displayDetails() {
+        System.out.println(
+            id + " | " + title + " | Author: " + author +
+            " | Status: " + (issued ? "Issued" : "Available")
+        );
+    }
+
+    // Issue the book
+    @Override
+    public void issueItem() {
+        if (!issued) {
+            issued = true;
+            System.out.println(title + " issued successfully.");
+        } else {
+            System.out.println(title + " is already issued.");
+        }
+    }
+
+    // Return the book
+    @Override
+    public void returnItem() {
+        if (issued) {
+            issued = false;
+            System.out.println(title + " returned successfully.");
+        } else {
+            System.out.println(title + " was not issued.");
+        }
+    }
+}
+
+// Main class
+public class LibraryManagement {
+    public static void main(String[] args) {
+
+        // Create an ArrayList to store books
+        ArrayList<Book> books = new ArrayList<>();
+
+        // Add books to the library
+        books.add(new Book(101, "Java Programming", "James Gosling"));
+        books.add(new Book(102, "Data Structures", "Mark Allen"));
+        books.add(new Book(103, "Computer Networks", "Andrew Tanenbaum"));
+
+        // Display all books
+        System.out.println("===== LIBRARY BOOKS =====");
+        for (Book book : books) {
+            book.displayDetails();
+        }
+
+        // Issue the first book
+        System.out.println("\n===== ISSUE BOOK =====");
+        books.get(0).issueItem();
+
+        // Try to issue the same book again
+        books.get(0).issueItem();
+
+        // Return the book
+        System.out.println("\n===== RETURN BOOK =====");
+        books.get(0).returnItem();
+
+        // Display updated details
+        System.out.println("\n===== UPDATED DETAILS =====");
+        for (Book book : books) {
+            book.displayDetails();
+        }
+    }
+}
