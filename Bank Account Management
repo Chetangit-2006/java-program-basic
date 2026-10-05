@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 // Bank account class
@@ -90,14 +89,11 @@ public class BankManagement {
         BankAccount account = new BankAccount(10000);
 
         // Create multiple customer threads
-        Customer c1 =
-            new Customer(account, "Chetan", 6000);
+        Customer c1 = new Customer(account, "Chetan", 6000);
 
-        Customer c2 =
-            new Customer(account, "Rahul", 5000);
+        Customer c2 = new Customer(account, "Rahul", 5000);
 
-        Customer c3 =
-            new Customer(account, "Aman", 2000);
+        Customer c3 = new Customer(account, "Aman", 2000);
 
         // Start all threads
         c1.start();
@@ -114,11 +110,10 @@ public class BankManagement {
         }
 
         // Display final account balance
-        System.out.println("========== RESULT ==========");
+        System.out.println("----- RESULT -----");
         account.showBalance();
     }
 }
-
 
 
 /sample output:
