@@ -1,1 +1,120 @@
 
+import java.util.*;
+
+// Bank account class
+class BankAccount {
+
+    private double balance;
+
+    // Constructor
+    BankAccount(double balance) {
+        this.balance = balance;
+    }
+
+    // Synchronized method prevents multiple threads
+    // from accessing the account at the same time
+    synchronized void withdraw(String name, double amount) {
+
+        System.out.println(name + " wants to withdraw ₹" + amount);
+
+        // Check whether sufficient balance is available
+        if (balance >= amount) {
+
+            System.out.println(name + " is processing...");
+
+            try {
+                // Simulate bank processing time
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println("Transaction interrupted.");
+            }
+
+            // Deduct amount
+            balance -= amount;
+
+            System.out.println(
+                name + " successfully withdrew ₹" + amount
+            );
+
+            System.out.println("Remaining Balance: ₹" + balance);
+
+        } else {
+
+            // Insufficient balance
+            System.out.println(
+                name + ": Insufficient balance!"
+            );
+        }
+
+        System.out.println();
+    }
+
+    // Display current balance
+    void showBalance() {
+        System.out.println("Final Balance: ₹" + balance);
+    }
+}
+
+// Thread class for bank transactions
+class Customer extends Thread {
+
+    private BankAccount account;
+    private double amount;
+
+    // Constructor
+    Customer(
+        BankAccount account,
+        String name,
+        double amount
+    ) {
+        super(name);
+        this.account = account;
+        this.amount = amount;
+    }
+
+    // run() executes when thread starts
+    @Override
+    public void run() {
+
+        // Get customer name using getName()
+        account.withdraw(getName(), amount);
+    }
+}
+
+// Main class
+public class BankManagement {
+
+    public static void main(String[] args) {
+
+        // Create one shared bank account
+        BankAccount account = new BankAccount(10000);
+
+        // Create multiple customer threads
+        Customer c1 =
+            new Customer(account, "Chetan", 6000);
+
+        Customer c2 =
+            new Customer(account, "Rahul", 5000);
+
+        Customer c3 =
+            new Customer(account, "Aman", 2000);
+
+        // Start all threads
+        c1.start();
+        c2.start();
+        c3.start();
+
+        // Wait for all transactions to finish
+        try {
+            c1.join();
+            c2.join();
+            c3.join();
+        } catch (InterruptedException e) {
+            System.out.println("Main thread interrupted.");
+        }
+
+        // Display final account balance
+        System.out.println("========== RESULT ==========");
+        account.showBalance();
+    }
+}
