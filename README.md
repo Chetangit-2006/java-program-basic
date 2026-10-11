@@ -45,14 +45,7 @@ I believe in learning by doing, understanding concepts deeply, and continuously 
 - Build practical software development projects.
 - Prepare for software engineering roles at leading technology companies.
 
-## Connect With Me
 
-**Chetan Kewat**  
-B.Tech Computer Science and Engineering Student
-
-- GitHub: [@Chetangit](https://github.com/Chetangit)
-
----
 
 *Learning continuously. Coding consistently. Building for the future.*
 
